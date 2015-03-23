@@ -8,5 +8,8 @@
     {"image":"anvil", "sound": "anvil", "label":"Enclume"},
     {"image":"ghast", "sound": "ghast", "label":"Ghast"},
     {"image":"ghast_charge", "sound": "ghast_charge", "label":"Ghast charge"},
-    {"image":"portail_nether", "sound": "portail_nether", "label":"Portail du nether"}
+    {"image":"portail_nether", "sound": "nether_portal, "label":"Portail du nether"}
+	{"image":"blaze", "sound": "blaze_breathe1", "label":"Blaze"}
+	{"image":"endermen", "sound": "blaze_breathe1", "label":"Endermen"}
+	{"image":"slime", "sound": "slime_big4", "label":"Slime"}
 ]
