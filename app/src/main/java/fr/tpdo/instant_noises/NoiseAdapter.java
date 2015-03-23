@@ -11,6 +11,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 /**
@@ -43,7 +45,8 @@ public class NoiseAdapter extends ArrayAdapter<Noise> {
 
         text.setText(noise.getLabel());
         int imageId = context.getResources().getIdentifier(noise.getImage(), "drawable", getContext().getPackageName());
-        button.setImageResource(imageId);
+        Picasso.with(context).load(imageId).resize(128, 128).into(button);
+        //button.setImageResource(imageId);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

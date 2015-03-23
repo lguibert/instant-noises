@@ -5,8 +5,8 @@
     {"image":"face_villager", "sound": "villager_idle", "label":"Idle"},
     {"image":"face_villager", "sound": "villager_no", "label":"No"},
     {"image":"face_villager", "sound": "villager_yes", "label":"Yes"},
+    {"image":"anvil", "sound": "anvil", "label":"Enclume"},
     {"image":"ghast", "sound": "ghast", "label":"Ghast"},
-    {"image":"ghast_fireball", "sound": "ghast_fireball", "label":"Ghast fireball"},
-    {"image":"ghast", "sound": "ghast_dead", "label":"Ghast"},
-    {"image":"ghast_charge", "sound": "ghast_charge", "label":"Ghast charge"}
+    {"image":"ghast_charge", "sound": "ghast_charge", "label":"Ghast charge"},
+    {"image":"portail_nether", "sound": "portail_nether", "label":"Portail du nether"}
 ]

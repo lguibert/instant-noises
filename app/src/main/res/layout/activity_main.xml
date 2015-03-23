@@ -13,5 +13,6 @@
         android:columnWidth="150dp"
         android:layout_alignParentTop="true"
         android:nestedScrollingEnabled="true"
-        android:numColumns="auto_fit" />
+        android:numColumns="auto_fit"
+        android:layout_alignParentBottom="true" />
 </RelativeLayout>
