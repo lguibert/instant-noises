@@ -5,13 +5,28 @@
     {"image":"face_villager", "sound": "villager_idle", "label":"Idle"},
     {"image":"face_villager", "sound": "villager_no", "label":"No"},
     {"image":"face_villager", "sound": "villager_yes", "label":"Yes"},
-    {"image":"anvil", "sound": "anvil", "label":"Enclume"},
+    
     {"image":"ghast", "sound": "ghast", "label":"Ghast"},
     {"image":"ghast_charge", "sound": "ghast_charge", "label":"Ghast charge"},
-    {"image":"portail_nether", "sound": "nether_portal", "label":"Portail du nether"},
 	{"image":"blaze", "sound": "blaze_breathe1", "label":"Blaze"},
 	{"image":"endermen", "sound": "endermen_stare", "label":"Endermen"},
 	{"image":"slime", "sound": "slime_big4", "label":"Slime"},
+	{"image":"chicken", "sound": "chicken_say1", "label":"Chicken"},
+	{"image":"egg", "sound": "plop", "label":"Plop"},
+	
+	{"image":"cow", "sound": "cow_say3", "label":"Cow"},
+	
+	
+	{"image":"portail_nether", "sound": "nether_portal", "label":"Portail du nether"},
+	{"image":"chest", "sound": "chestopen", "label":"Chest"},
+	{"image":"stonebutton", "sound": "click", "label":"Click"},
+	{"image":"anvil", "sound": "anvil", "label":"Enclume"},
+	{"image":"potions", "sound": "drink", "label":"Drink"},
+	{"image":"porkchop", "sound": "eat1", "label":"Eat"},
+	{"image":"lava", "sound": "lava", "label":"Lava"},
+	{"image":"water", "sound": "water", "label":"Water"},
+	
+	
 	{"image":"tg", "sound": "tg", "label":"TA GUEULE"},
 	{"image":"haha", "sound": "haha", "label":"HAHA"}
 ]
