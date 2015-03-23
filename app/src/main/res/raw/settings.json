@@ -1,0 +1,12 @@
+[
+    {"image":"face_villager", "sound": "villager_death", "label":"Death"},
+    {"image":"face_villager", "sound": "villager_haggle", "label":"Haggle"},
+    {"image":"face_villager", "sound": "villager_hit", "label":"Hit"},
+    {"image":"face_villager", "sound": "villager_idle", "label":"Idle"},
+    {"image":"face_villager", "sound": "villager_no", "label":"No"},
+    {"image":"face_villager", "sound": "villager_yes", "label":"Yes"},
+    {"image":"ghast", "sound": "ghast", "label":"Ghast"},
+    {"image":"ghast_fireball", "sound": "ghast_fireball", "label":"Ghast fireball"},
+    {"image":"ghast", "sound": "ghast_dead", "label":"Ghast"},
+    {"image":"ghast_charge", "sound": "ghast_charge", "label":"Ghast charge"}
+]
