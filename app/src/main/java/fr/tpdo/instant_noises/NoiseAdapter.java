@@ -13,7 +13,9 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Lucas on 23/03/2015.
@@ -23,13 +25,17 @@ public class NoiseAdapter extends ArrayAdapter<Noise> {
     private int resource;
     private List<Noise> noises;
     private SoundPool soundPool;
+    private Map<Integer, Boolean> loaded;
+    private Map<Integer, Integer> samplesId;
 
     public NoiseAdapter(Context context, int resource, List<Noise> objects) {
         super(context, resource, objects);
         this.context = context;
         this.resource = resource;
         this.noises = objects;
-        this.soundPool = new SoundPool(2, AudioManager.STREAM_MUSIC, 100);
+        this.soundPool = new SoundPool(1, AudioManager.STREAM_MUSIC, 100);
+        this.loaded = new HashMap<>();
+        this.samplesId = new HashMap<>();
     }
 
     @Override
@@ -50,11 +56,26 @@ public class NoiseAdapter extends ArrayAdapter<Noise> {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int soundId = context.getResources().getIdentifier(noise.getSound(), "raw", getContext().getPackageName());
+                final int soundId = context.getResources().getIdentifier(noise.getSound(), "raw", getContext().getPackageName());
 
-                int test = soundPool.load(context, soundId, 1);
 
-                soundPool.play(test, 1,1,1,0,1);
+                if(!loaded.containsKey(soundId)){
+                    final int soundLoaded = soundPool.load(context, soundId, 1);
+
+                    synchronized (loaded){
+                        loaded.put(soundId,true);
+                        samplesId.put(soundId,soundLoaded);
+                    }
+
+                    soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
+                        @Override
+                        public void onLoadComplete(SoundPool soundPool, int sampleId, int status) {
+                            soundPool.play(samplesId.get(soundId), 1,1,1,0,1);
+                        }
+                    });
+                }else{
+                    soundPool.play(samplesId.get(soundId), 1,1,1,0,1);
+                }
             }
         });
 
