@@ -28,5 +28,6 @@
 	
 	
 	{"image":"tg", "sound": "tg", "label":"TA GUEULE"},
-	{"image":"haha", "sound": "haha", "label":"HAHA"}
+	{"image":"haha", "sound": "haha", "label":"HAHA"},
+	{"image":"claptrap", "sound": "claptrap", "label":"Claptrap"}
 ]
