@@ -1,33 +1,34 @@
 [
-    {"image":"face_villager", "sound": "villager_death", "label":"Death"},
-    {"image":"face_villager", "sound": "villager_haggle", "label":"Haggle"},
-    {"image":"face_villager", "sound": "villager_hit", "label":"Hit"},
-    {"image":"face_villager", "sound": "villager_idle", "label":"Idle"},
-    {"image":"face_villager", "sound": "villager_no", "label":"No"},
-    {"image":"face_villager", "sound": "villager_yes", "label":"Yes"},
+    {"image":"face_villager", "sound": "villager_death", "label":"Death", "idCategory":"3"},
+    {"image":"face_villager", "sound": "villager_haggle", "label":"Haggle", "idCategory":"3"},
+    {"image":"face_villager", "sound": "villager_hit", "label":"Hit", "idCategory":"3"},
+    {"image":"face_villager", "sound": "villager_idle", "label":"Idle", "idCategory":"3"},
+    {"image":"face_villager", "sound": "villager_no", "label":"No", "idCategory":"3"},
+    {"image":"face_villager", "sound": "villager_yes", "label":"Yes", "idCategory":"3"},
     
-    {"image":"ghast", "sound": "ghast", "label":"Ghast"},
-    {"image":"ghast_charge", "sound": "ghast_charge", "label":"Ghast charge"},
-	{"image":"blaze", "sound": "blaze_breathe1", "label":"Blaze"},
-	{"image":"endermen", "sound": "endermen_stare", "label":"Endermen"},
-	{"image":"slime", "sound": "slime_big4", "label":"Slime"},
-	{"image":"chicken", "sound": "chicken_say1", "label":"Chicken"},
-	{"image":"egg", "sound": "plop", "label":"Plop"},
+    {"image":"ghast", "sound": "ghast", "label":"Ghast", "idCategory":"3"},
+    {"image":"ghast_charge", "sound": "ghast_charge", "label":"Ghast charge", "idCategory":"3"},
+	{"image":"blaze", "sound": "blaze_breathe1", "label":"Blaze", "idCategory":"3"},
+	{"image":"endermen", "sound": "endermen_stare", "label":"Endermen", "idCategory":"3"},
+	{"image":"slime", "sound": "slime_big4", "label":"Slime", "idCategory":"3"},
+	{"image":"chicken", "sound": "chicken_say1", "label":"Chicken", "idCategory":"3"},
+	{"image":"egg", "sound": "plop", "label":"Plop", "idCategory":"3"},
 	
-	{"image":"cow", "sound": "cow_say3", "label":"Cow"},
-	
-	
-	{"image":"portail_nether", "sound": "nether_portal", "label":"Portail du nether"},
-	{"image":"chest", "sound": "chestopen", "label":"Chest"},
-	{"image":"stonebutton", "sound": "click", "label":"Click"},
-	{"image":"anvil", "sound": "anvil", "label":"Enclume"},
-	{"image":"potions", "sound": "drink", "label":"Drink"},
-	{"image":"porkchop", "sound": "eat1", "label":"Eat"},
-	{"image":"lava", "sound": "lava", "label":"Lava"},
-	{"image":"water", "sound": "water", "label":"Water"},
+	{"image":"cow", "sound": "cow_say3", "label":"Cow", "idCategory":"3"},
 	
 	
-	{"image":"tg", "sound": "tg", "label":"TA GUEULE"},
-	{"image":"haha", "sound": "haha", "label":"HAHA"},
-	{"image":"claptrap", "sound": "claptrap", "label":"Claptrap"}
+	{"image":"portail_nether", "sound": "nether_portal", "label":"Portail du nether", "idCategory":"3"},
+	{"image":"chest", "sound": "chestopen", "label":"Chest", "idCategory":"3"},
+	{"image":"stonebutton", "sound": "click", "label":"Click", "idCategory":"3"},
+	{"image":"anvil", "sound": "anvil", "label":"Enclume", "idCategory":"3"},
+	{"image":"potions", "sound": "drink", "label":"Drink", "idCategory":"3"},
+	{"image":"porkchop", "sound": "eat1", "label":"Eat", "idCategory":"3"},
+	{"image":"lava", "sound": "lava", "label":"Lava", "idCategory":"3"},
+	{"image":"water", "sound": "water", "label":"Water", "idCategory":"3"},
+	
+	
+	{"image":"tg", "sound": "tg", "label":"TA GUEULE", "idCategory":"4"},
+	{"image":"haha", "sound": "haha", "label":"HAHA", "idCategory":"4"},
+	{"image":"claptrap", "sound": "claptrap", "label":"Claptrap", "idCategory":"2"},
+	{"image":"default_picture", "sound": "pewpew", "label":"Pew Pew", "idCategory":"1"}
 ]

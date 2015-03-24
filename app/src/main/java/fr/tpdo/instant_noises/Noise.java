@@ -7,14 +7,25 @@ public class Noise {
     private String label;
     private String image;
     private String sound;
+    private int idCategory;
 
     public Noise() {
     }
 
-    public Noise(String label, String sound, String image) {
+    public Noise(String label, String sound, String image, int idCategory) {
         this.label = label;
         this.sound = sound;
         this.image = image;
+        this.idCategory = idCategory;
+
+    }
+
+    public int getIdCategory() {
+        return idCategory;
+    }
+
+    public void setIdCategory(int idCategory) {
+        this.idCategory = idCategory;
     }
 
     public String getLabel() {

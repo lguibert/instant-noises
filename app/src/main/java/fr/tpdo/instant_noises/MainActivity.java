@@ -1,11 +1,17 @@
 package fr.tpdo.instant_noises;
 
 
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.view.ContextMenu;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.GridView;
+import android.widget.ListView;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -21,11 +27,22 @@ import java.util.List;
 
 public class MainActivity extends ActionBarActivity  {
 
+    private DrawerLayout drawerLayout;
+    private ListView drawerList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //String[] datas = getResources().getStringArray(R.array.drawer_items);
+
+        //drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        //drawerList = (ListView) findViewById(R.id.left_drawer);
+
+        //drawerList.setAdapter(new ArrayAdapter<String>(this,
+        //       R.layout.drawer, datas));
+        //drawerList.setOnClickListener(new DrawerItemClickListener());
 
         try {
             InputStream inputStream = getResources().openRawResource(R.raw.settings);
@@ -33,7 +50,12 @@ public class MainActivity extends ActionBarActivity  {
             Type type = new TypeToken<ArrayList<Noise>>(){}.getType();
             List<Noise> noises = new Gson().fromJson(json,type);
 
-            NoiseAdapter na = new NoiseAdapter(this, R.layout.itemnoise,noises);
+            InputStream inputStream2 = getResources().openRawResource(R.raw.category);
+            String json2 = IOUtils.toString(inputStream2);
+            Type type2 = new TypeToken<ArrayList<Category>>(){}.getType();
+            List<Category> categories = new Gson().fromJson(json2,type2);
+
+            NoiseAdapter na = new NoiseAdapter(this, R.layout.itemnoise,noises, categories);
             GridView gv = (GridView) findViewById(R.id.gridView);
             gv.setAdapter(na);
         } catch (IOException e) {

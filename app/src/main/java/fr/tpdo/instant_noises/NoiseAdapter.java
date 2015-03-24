@@ -13,6 +13,8 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -27,8 +29,9 @@ public class NoiseAdapter extends ArrayAdapter<Noise> {
     private SoundPool soundPool;
     private Map<Integer, Boolean> loaded;
     private Map<Integer, Integer> samplesId;
+    private CategoryCtrl ctrl;
 
-    public NoiseAdapter(Context context, int resource, List<Noise> objects) {
+    public NoiseAdapter(Context context, int resource, List<Noise> objects, List<Category> categories) {
         super(context, resource, objects);
         this.context = context;
         this.resource = resource;
@@ -36,6 +39,7 @@ public class NoiseAdapter extends ArrayAdapter<Noise> {
         this.soundPool = new SoundPool(1, AudioManager.STREAM_MUSIC, 100);
         this.loaded = new HashMap<>();
         this.samplesId = new HashMap<>();
+        this.ctrl = new CategoryCtrl(categories);
     }
 
     @Override
@@ -46,10 +50,13 @@ public class NoiseAdapter extends ArrayAdapter<Noise> {
 
         ImageButton button = (ImageButton) view.findViewById(R.id.image);
         TextView text = (TextView) view.findViewById(R.id.label);
+        TextView catText = (TextView) view.findViewById(R.id.textViewCategory);
 
-
+        //on recupere la categorie liée au son en cours
+        Category cat = ctrl.getCategoryWithId(noise.getIdCategory());
 
         text.setText(noise.getLabel());
+        catText.setText(cat.getName());
         int imageId = context.getResources().getIdentifier(noise.getImage(), "drawable", getContext().getPackageName());
         Picasso.with(context).load(imageId).resize(128, 128).into(button);
         //button.setImageResource(imageId);
