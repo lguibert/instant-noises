@@ -45,9 +45,6 @@ public class MainActivity extends ActionBarActivity  {
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawerList = (ListView) findViewById(R.id.left_drawer);
 
-        //drawerList.setAdapter(new ArrayAdapter<Category>(this, R.layout.drawer_list_item, categoryDAO.findAll(Category.class, R.raw.category)));
-        //drawerList.setOnClickListener(new DrawerItemClickListener());
-
         DrawerArrayAdapter daa = new DrawerArrayAdapter(this, R.layout.drawer_list_item, categoryDAO.findAll(Category.class, R.raw.category));
         drawerList.setAdapter(daa);
         NoiseAdapter na = new NoiseAdapter(this, R.layout.itemnoise, noiseDAO.findAll(Noise.class, R.raw.settings), categoryDAO.findAll(Category.class, R.raw.category));
