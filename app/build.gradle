@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: "sonar-runner"
 
 android {
     compileSdkVersion 21
@@ -23,6 +24,17 @@ android {
             println filename
             output.outputFile = file("$project.buildDir/outputs/apk/" + filename);
         }
+    }
+}
+
+sonarRunner {
+    sonarProperties {
+        property "sonar.host.url", "http://sonar.maison.lan/sonar/"
+        property "sonar.jdbc.url", "jdbc:postgresql://data.maison.lan/sonar"
+        property "sonar.jdbc.driverClassName", "org.postgresql.Driver"
+        property "sonar.jdbc.username", "sonar"
+        property "sonar.jdbc.password", "sonar"
+        property "sonar.sources", "src/main/java"
     }
 }
 

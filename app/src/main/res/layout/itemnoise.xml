@@ -17,4 +17,12 @@
         android:gravity="center"
         android:text="Small Text"
         android:id="@+id/label" />
+
+    <TextView
+        android:layout_width="96dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:gravity="center"
+        android:text="Small Text"
+        android:id="@+id/textViewCategory" />
 </LinearLayout>
