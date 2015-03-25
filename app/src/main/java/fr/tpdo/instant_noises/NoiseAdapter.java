@@ -31,6 +31,7 @@ public class NoiseAdapter extends ArrayAdapter<Noise> {
     private Map<Integer, Integer> samplesId;
     private CategoryCtrl ctrl;
 
+
     public NoiseAdapter(Context context, int resource, List<Noise> objects, List<Category> categories) {
         super(context, resource, objects);
         this.context = context;
@@ -38,6 +39,7 @@ public class NoiseAdapter extends ArrayAdapter<Noise> {
         this.noises = objects;
         this.soundPool = new SoundPool(1, AudioManager.STREAM_MUSIC, 100);
         this.loaded = new HashMap<>();
+
         this.samplesId = new HashMap<>();
         this.ctrl = new CategoryCtrl(categories);
     }

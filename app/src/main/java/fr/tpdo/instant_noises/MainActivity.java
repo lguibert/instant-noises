@@ -24,6 +24,9 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
+import fr.tpdo.instant_noises.dao.CategoryDAO;
+import fr.tpdo.instant_noises.dao.NoiseDAO;
+
 
 public class MainActivity extends ActionBarActivity  {
 
@@ -35,33 +38,21 @@ public class MainActivity extends ActionBarActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //String[] datas = getResources().getStringArray(R.array.drawer_items);
+        NoiseDAO noiseDAO = new NoiseDAO(this);
+        CategoryDAO categoryDAO = new CategoryDAO(this);
 
-        //drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        //drawerList = (ListView) findViewById(R.id.left_drawer);
 
-        //drawerList.setAdapter(new ArrayAdapter<String>(this,
-        //       R.layout.drawer, datas));
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawerList = (ListView) findViewById(R.id.left_drawer);
+
+        //drawerList.setAdapter(new ArrayAdapter<Category>(this, R.layout.drawer_list_item, categoryDAO.findAll(Category.class, R.raw.category)));
         //drawerList.setOnClickListener(new DrawerItemClickListener());
 
-        try {
-            InputStream inputStream = getResources().openRawResource(R.raw.settings);
-            String json = IOUtils.toString(inputStream);
-            Type type = new TypeToken<ArrayList<Noise>>(){}.getType();
-            List<Noise> noises = new Gson().fromJson(json,type);
-
-            InputStream inputStream2 = getResources().openRawResource(R.raw.category);
-            String json2 = IOUtils.toString(inputStream2);
-            Type type2 = new TypeToken<ArrayList<Category>>(){}.getType();
-            List<Category> categories = new Gson().fromJson(json2,type2);
-
-            NoiseAdapter na = new NoiseAdapter(this, R.layout.itemnoise,noises, categories);
-            GridView gv = (GridView) findViewById(R.id.gridView);
-            gv.setAdapter(na);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+        DrawerArrayAdapter daa = new DrawerArrayAdapter(this, R.layout.drawer_list_item, categoryDAO.findAll(Category.class, R.raw.category));
+        drawerList.setAdapter(daa);
+        NoiseAdapter na = new NoiseAdapter(this, R.layout.itemnoise, noiseDAO.findAll(Noise.class, R.raw.settings), categoryDAO.findAll(Category.class, R.raw.category));
+        GridView gv = (GridView) findViewById(R.id.gridView);
+        gv.setAdapter(na);
     }
 
 
