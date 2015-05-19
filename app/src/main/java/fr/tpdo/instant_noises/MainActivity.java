@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.ListView;
@@ -50,6 +51,17 @@ public class MainActivity extends ActionBarActivity  {
         NoiseAdapter na = new NoiseAdapter(this, R.layout.itemnoise, noiseDAO.findAll(Noise.class, R.raw.settings), categoryDAO.findAll(Category.class, R.raw.category));
         GridView gv = (GridView) findViewById(R.id.gridView);
         gv.setAdapter(na);
+
+        drawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                NoiseDAO noiseDAO = new NoiseDAO(parent.getContext());
+                CategoryDAO categoryDAO = new CategoryDAO(parent.getContext());
+                NoiseAdapter na = new NoiseAdapter(parent.getContext(), R.layout.itemnoise, noiseDAO.findOneType(Noise.class, R.raw.settings, ((Category) drawerList.getAdapter().getItem(position)).getId()), categoryDAO.findAll(Category.class, R.raw.category));
+                GridView gv = (GridView) findViewById(R.id.gridView);
+                gv.setAdapter(na);
+            }
+        });
     }
 
 
