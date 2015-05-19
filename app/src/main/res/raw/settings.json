@@ -34,5 +34,16 @@
 	{"image":"nichon", "sound": "nichon", "label":"Niiiiichoooons", "idCategory":"1"},
 	{"image":"culotte", "sound": "culotte", "label":"Pantzu !", "idCategory":"1"},
 	{"image":"japon", "sound": "japon", "label":"Jaaapoooon !", "idCategory":"1"},
-	{"image":"sega", "sound": "se_ga", "label":"SE-GA !", "idCategory":"1"}
+	{"image":"sega", "sound": "se_ga", "label":"SE-GA !", "idCategory":"1"},
+
+
+  	{"image":"baisetameremarty", "sound": "baisetameremarty", "label":"Baise ta mère", "idCategory":"6"},
+	{"image":"bougeplus", "sound": "bougeplus", "label":"Oh, je bouge plus", "idCategory":"6"},
+	{"image":"cestparti", "sound": "cestparti", "label":"C'est parti !", "idCategory":"6"},
+	{"image":"chaise", "sound": "chaise", "label":"Chaise", "idCategory":"6"},
+	{"image":"doigtporte", "sound": "doigtporte", "label":"Doigts porte", "idCategory":"6"},
+	{"image":"patron", "sound": "patron", "label":"Patron ?!?", "idCategory":"6"},
+	{"image":"question", "sound": "question", "label":"Question...", "idCategory":"6"},
+	{"image":"testicule", "sound": "testicule", "label":"Testicules...", "idCategory":"6"},
+	{"image":"tetonagra", "sound": "tetonagra", "label":"Téton agrapheuse", "idCategory":"6"}
 ]

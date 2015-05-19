@@ -60,6 +60,7 @@ public class MainActivity extends ActionBarActivity  {
                 NoiseAdapter na = new NoiseAdapter(parent.getContext(), R.layout.itemnoise, noiseDAO.findOneType(Noise.class, R.raw.settings, ((Category) drawerList.getAdapter().getItem(position)).getId()), categoryDAO.findAll(Category.class, R.raw.category));
                 GridView gv = (GridView) findViewById(R.id.gridView);
                 gv.setAdapter(na);
+                drawerLayout.closeDrawer(drawerList);
             }
         });
     }
