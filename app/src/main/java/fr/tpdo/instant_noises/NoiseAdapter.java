@@ -51,6 +51,7 @@ public class NoiseAdapter extends ArrayAdapter<Noise> {
         final Noise noise = getItem(position);
 
         ImageButton button = (ImageButton) view.findViewById(R.id.image);
+        button.setBackgroundColor(0);
         TextView text = (TextView) view.findViewById(R.id.label);
         TextView catText = (TextView) view.findViewById(R.id.textViewCategory);
 
