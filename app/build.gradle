@@ -29,7 +29,7 @@ android {
 
 sonarRunner {
     sonarProperties {
-        property "sonar.host.url", "http://sonar.maison.lan/sonar/"
+        property "sonar.host.url", "http://sonar.anthonydenaud.com/sonar/"
         property "sonar.jdbc.url", "jdbc:postgresql://data.maison.lan/sonar"
         property "sonar.jdbc.driverClassName", "org.postgresql.Driver"
         property "sonar.jdbc.username", "sonar"
