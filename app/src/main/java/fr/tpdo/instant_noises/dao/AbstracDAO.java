@@ -27,7 +27,6 @@ public class AbstracDAO<T> {
 
     public <T> List<T> findAll(Type type, int resource){
         List<T> objects;
-
         try {
             InputStream inputStream = this.context.getResources().openRawResource(resource);
             String json;
@@ -38,7 +37,6 @@ public class AbstracDAO<T> {
         } catch (IOException e) {
             objects = null;
         }
-
         return objects;
     }
 }

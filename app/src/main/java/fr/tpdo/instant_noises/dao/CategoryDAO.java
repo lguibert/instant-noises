@@ -24,4 +24,17 @@ public class CategoryDAO  extends AbstracDAO<Category>{
         Type listType = new TypeToken<ArrayList<Category>>(){}.getType();
         return super.findAll(listType, resource);
     }
+
+    public List<Integer> findAllChild(Type type, int resource, int id) {
+        Type listType = new TypeToken<ArrayList<Category>>(){}.getType();
+        List<Category> all = findAll(listType, resource);
+        List<Integer> ids = new ArrayList<>();
+        ids.add(id);
+        for(Category object:all){
+            if(object.getIdParent()==id){
+                ids.addAll(findAllChild(type,resource,object.getId()));
+            }
+        }
+        return ids;
+    }
 }

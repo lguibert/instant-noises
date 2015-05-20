@@ -14,17 +14,13 @@ public class Category {
         this.id = id;
     }
 
-    public int getIdParent() {
-
-        return idParent;
-    }
+    public int getIdParent() { return idParent; }
 
     public void setIdParent(int idParent) {
         this.idParent = idParent;
     }
 
-    public Category() {
-    }
+    public Category() { }
 
     public String getName() {
         return name;

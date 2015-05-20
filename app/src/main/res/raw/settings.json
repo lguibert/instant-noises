@@ -30,5 +30,25 @@
 	{"image":"tg", "sound": "tg", "label":"TA GUEULE", "idCategory":"4"},
 	{"image":"haha", "sound": "haha", "label":"HAHA", "idCategory":"4"},
 	{"image":"claptrap", "sound": "claptrap", "label":"Claptrap", "idCategory":"2"},
-	{"image":"default_picture", "sound": "pewpew", "label":"Pew Pew", "idCategory":"1"}
+	{"image":"default_picture", "sound": "pewpew", "label":"Pew Pew", "idCategory":"1"},
+	{"image":"nichon", "sound": "nichon", "label":"Niiiiichoooons", "idCategory":"1"},
+	{"image":"culotte", "sound": "culotte", "label":"Pantzu !", "idCategory":"1"},
+	{"image":"japon", "sound": "japon", "label":"Jaaapoooon !", "idCategory":"1"},
+	{"image":"sega", "sound": "se_ga", "label":"SE-GA !", "idCategory":"1"},
+
+
+  	{"image":"baisetameremarty", "sound": "baisetameremarty", "label":"Baise ta mère", "idCategory":"6"},
+	{"image":"bougeplus", "sound": "bougeplus", "label":"Oh, je bouge plus", "idCategory":"6"},
+	{"image":"cestparti", "sound": "cestparti", "label":"C'est parti !", "idCategory":"6"},
+	{"image":"chaise", "sound": "chaise", "label":"Chaise", "idCategory":"6"},
+	{"image":"doigtporte", "sound": "doigtporte", "label":"Doigts porte", "idCategory":"6"},
+	{"image":"patron", "sound": "patron", "label":"Patron ?!?", "idCategory":"6"},
+	{"image":"question", "sound": "question", "label":"Question...", "idCategory":"6"},
+	{"image":"testicule", "sound": "testicule", "label":"Testicules...", "idCategory":"6"},
+	{"image":"tetonagra", "sound": "tetonagra", "label":"Téton agrapheuse", "idCategory":"6"},
+	{"image":"ptiripou", "sound": "ptiripou", "label":"Ptiripou", "idCategory":"6"},
+	{"image":"reduit", "sound": "reduit", "label":"Elle réduit les pénis", "idCategory":"6"},
+	{"image":"colonel", "sound": "colonel", "label":"Colonel", "idCategory":"6"},
+	{"image":"ptiripou_maintenant", "sound": "ptiripou_maintenant", "label":"Ptiripou maintenant", "idCategory":"6"},
+	{"image":"coupe_des_tetes", "sound": "coupe_des_tetes", "label":"Chanson Ptiritou", "idCategory":"6"}
 ]

@@ -26,7 +26,7 @@ public class NoiseAdapter extends ArrayAdapter<Noise> {
     private Context context;
     private int resource;
     private List<Noise> noises;
-    private SoundPool soundPool;
+    private MediaPlayer mPlayer;
     private Map<Integer, Boolean> loaded;
     private Map<Integer, Integer> samplesId;
     private CategoryCtrl ctrl;
@@ -37,7 +37,7 @@ public class NoiseAdapter extends ArrayAdapter<Noise> {
         this.context = context;
         this.resource = resource;
         this.noises = objects;
-        this.soundPool = new SoundPool(1, AudioManager.STREAM_MUSIC, 100);
+        this.mPlayer = null;
         this.loaded = new HashMap<>();
 
         this.samplesId = new HashMap<>();
@@ -61,33 +61,23 @@ public class NoiseAdapter extends ArrayAdapter<Noise> {
         catText.setText(cat.getName());
         int imageId = context.getResources().getIdentifier(noise.getImage(), "drawable", getContext().getPackageName());
         Picasso.with(context).load(imageId).resize(128, 128).into(button);
-        //button.setImageResource(imageId);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 final int soundId = context.getResources().getIdentifier(noise.getSound(), "raw", getContext().getPackageName());
-
-
-                if(!loaded.containsKey(soundId)){
-                    final int soundLoaded = soundPool.load(context, soundId, 1);
-
-                    synchronized (loaded){
-                        loaded.put(soundId,true);
-                        samplesId.put(soundId,soundLoaded);
-                    }
-
-                    soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
-                        @Override
-                        public void onLoadComplete(SoundPool soundPool, int sampleId, int status) {
-                            soundPool.play(samplesId.get(soundId), 1,1,1,0,1);
-                        }
-                    });
-                }else{
-                    soundPool.play(samplesId.get(soundId), 1,1,1,0,1);
-                }
+                playSound(soundId);
             }
         });
 
         return view;
+    }
+
+    private void playSound(int resId) {
+        if(mPlayer != null) {
+            mPlayer.stop();
+            mPlayer.release();
+        }
+        mPlayer = MediaPlayer.create(this.context, resId);
+        mPlayer.start();
     }
 }
