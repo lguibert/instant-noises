@@ -1,0 +1,8 @@
+[
+    {"id": 0, "idParent": "99", "name": "Tous"},
+    {"id": 2, "idParent": "0", "name": "Jeu"},
+    {"id": 3, "idParent": "2", "name": "Minecraft"},
+    {"id": 4, "idParent": "0", "name": "Insulte"},
+    {"id": 6, "idParent": "0", "name": "Kassos"},
+    {"id": 1, "idParent": "0", "name": "Autre"}
+]
