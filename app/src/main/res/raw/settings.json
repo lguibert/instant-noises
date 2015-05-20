@@ -50,5 +50,7 @@
 	{"image":"reduit", "sound": "reduit", "label":"Elle réduit les pénis", "idCategory":"6"},
 	{"image":"colonel", "sound": "colonel", "label":"Colonel", "idCategory":"6"},
 	{"image":"ptiripou_maintenant", "sound": "ptiripou_maintenant", "label":"Ptiripou maintenant", "idCategory":"6"},
-	{"image":"coupe_des_tetes", "sound": "coupe_des_tetes", "label":"Chanson Ptiritou", "idCategory":"6"}
+	{"image":"coupe_des_tetes", "sound": "coupe_des_tetes", "label":"Chanson Ptiritou", "idCategory":"6"},
+    {"image":"papi_fougasse_question", "sound": "papi_fougasse_question", "label":"Papi Fougasse Question", "idCategory":"6"},
+    {"image":"papi_fougasse_reponse", "sound": "papi_fougasse_reponse", "label":"Papi Fougasse Reponse", "idCategory":"6"}
 ]
