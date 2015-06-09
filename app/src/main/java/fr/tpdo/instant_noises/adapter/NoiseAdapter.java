@@ -61,7 +61,13 @@ public class NoiseAdapter extends ArrayAdapter<Noise> {
         text.setText(noise.getLabel());
         catText.setText(cat.getName());
         int imageId = context.getResources().getIdentifier(noise.getImage(), "drawable", getContext().getPackageName());
-        Picasso.with(context).load(imageId).resize(160,160).centerCrop().into(itemLayout);
+        if (imageId != 0) {
+            Picasso.with(context).load(imageId).resize(160, 160).centerCrop().into(itemLayout);
+        } else{
+            System.out.println("Impossible de charger l'image : " + noise.getImage());
+    }
+
+
 
         return view;
     }

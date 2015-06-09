@@ -52,5 +52,36 @@
 	{"image":"ptiripou_maintenant", "sound": "ptiripou_maintenant", "label":"Ptiripou maintenant", "idCategory":"6"},
 	{"image":"coupe_des_tetes", "sound": "coupe_des_tetes", "label":"Chanson Ptiritou", "idCategory":"6"},
     {"image":"papi_fougasse_question", "sound": "papi_fougasse_question", "label":"Papi Fougasse Question", "idCategory":"6"},
-    {"image":"papi_fougasse_reponse", "sound": "papi_fougasse_reponse", "label":"Papi Fougasse Reponse", "idCategory":"6"}
+    {"image":"question2", "sound": "question2", "label":"Papi Fougasse Question 2", "idCategory":"6"},
+    {"image":"papi_fougasse_reponse", "sound": "papi_fougasse_reponse", "label":"Papi Fougasse Reponse", "idCategory":"6"},
+    {"image":"si_tu_cliques", "sound": "si_tu_cliques", "label":"Si tu clique ...", "idCategory":"6"},
+    {"image":"bite", "sound": "bite", "label":"Bite", "idCategory":"6"},
+    {"image":"foulindra", "sound": "foulindra", "label":"Foulindra", "idCategory":"6"},
+    {"image":"go_go_gadget", "sound": "go_go_gadget", "label":"GO GO Gadget", "idCategory":"6"},
+    {"image":"ta_gueule", "sound": "ta_gueule", "label":"TG !", "idCategory":"6"},
+    {"image":"hey_ouais", "sound": "hey_ouais", "label":"Hey Ouais", "idCategory":"6"},
+    {"image":"papa", "sound": "papa", "label":"Papa Darty", "idCategory":"6"},
+    {"image":"passe_par_trou", "sound": "passe_par_trou", "label":"Passe par trou", "idCategory":"6"},
+    {"image":"petit_cul", "sound": "petit_cul", "label":"Petit cul", "idCategory":"6"},
+    {"image":"pute", "sound": "pute", "label":"Pute pute ...", "idCategory":"6"},
+    {"image":"raz_le_cul", "sound": "raz_le_cul", "label":"Raz le cul !", "idCategory":"6"},
+    {"image":"sauter", "sound": "sauter", "label":"Me faire Sauter !", "idCategory":"6"},
+    {"image":"salope", "sound": "salope", "label":"Salope !", "idCategory":"6"},
+
+
+
+    {"image":"arthour_pas_changer_assiette_pour_fromage", "sound": "arthour_pas_changer_assiette_pour_fromage", "label":"Arthour ...", "idCategory":"7"},
+    {"image":"c_est_un_connard", "sound": "c_est_un_connard", "label":"C'est un connard", "idCategory":"7"},
+    {"image":"en_guarde", "sound": "en_garde", "label":"En garde !", "idCategory":"7"},
+    {"image":"on_en_a_gros", "sound": "on_en_a_gros", "label":"On en a gros !", "idCategory":"7"},
+    {"image":"c_est_pas_faux", "sound": "c_est_pas_faux", "label":"C'est pas faux", "idCategory":"7"},
+    {"image":"cest_de_la_merde", "sound": "cest_de_la_merde", "label":"C'est de la merde", "idCategory":"7"},
+    {"image":"cuillere", "sound": "cuillere", "label":"Cuillere !", "idCategory":"7"},
+    {"image":"etre_considere_en_tant_que_tel", "sound": "etre_considere_en_tant_que_tel", "label":"Etre considéré", "idCategory":"7"},
+    {"image":"kadoc_les_poissons", "sound": "kadoc_les_poissons", "label":"Kadoc les poissons", "idCategory":"7"},
+    {"image":"kadoc_mal_lapin", "sound": "kadoc_mal_lapin", "label":"Kadoc les lapins", "idCategory":"7"},
+    {"image":"kadoc_pas_du_tout_les_lapins", "sound": "kadoc_pas_du_tout_les_lapins", "label":"Kadoc les lapins 2", "idCategory":"7"},
+    {"image":"le_gras", "sound": "le_gras", "label":"Le gras ...", "idCategory":"7"}
+
+
 ]
