@@ -1,4 +1,4 @@
-package fr.tpdo.instant_noises;
+package fr.tpdo.instant_noises.adapter;
 
 
 import android.content.Context;
@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import fr.tpdo.instant_noises.Category;
+import fr.tpdo.instant_noises.R;
 import fr.tpdo.instant_noises.dao.CategoryDAO;
 
 /**

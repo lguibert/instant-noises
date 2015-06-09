@@ -1,28 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:weightSum="1">
+<fr.tpdo.instant_noises.component.ItemLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:weightSum="1"
+    android:background="@color/primary_text_default_material_light"
+    android:id="@+id/layout_noise"
+    android:gravity="bottom">
 
+    <!--
     <ImageButton
         android:layout_width="100dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:id="@+id/image"
-        android:layout_weight="0.09" />
+        android:layout_weight="0.09" />-->
 
-    <TextView
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:gravity="center"
-        android:text="Small Text"
-        android:id="@+id/label" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:background="#77000000"
+        android:gravity="bottom"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/abc_primary_text_material_dark"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:text="Small Text"
+            android:id="@+id/label" />
 
-    <TextView
-        android:layout_width="96dp"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:gravity="center"
-        android:text="Small Text"
-        android:id="@+id/textViewCategory" />
-</LinearLayout>
+        <TextView
+            android:layout_width="96dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:gravity="center"
+            android:textColor="@color/abc_primary_text_material_dark"
+            android:text="Small Text"
+            android:textSize="12sp"
+            android:id="@+id/textViewCategory" />
+        </LinearLayout>
+    
+
+</fr.tpdo.instant_noises.component.ItemLayout>

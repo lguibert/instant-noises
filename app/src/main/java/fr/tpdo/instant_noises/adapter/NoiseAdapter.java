@@ -1,4 +1,4 @@
-package fr.tpdo.instant_noises;
+package fr.tpdo.instant_noises.adapter;
 
 import android.content.Context;
 import android.media.AudioManager;
@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
@@ -19,6 +20,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import fr.tpdo.instant_noises.Category;
+import fr.tpdo.instant_noises.CategoryCtrl;
+import fr.tpdo.instant_noises.Noise;
+import fr.tpdo.instant_noises.R;
+import fr.tpdo.instant_noises.component.ItemLayout;
+
 /**
  * Created by Lucas on 23/03/2015.
  */
@@ -26,9 +33,7 @@ public class NoiseAdapter extends ArrayAdapter<Noise> {
     private Context context;
     private int resource;
     private List<Noise> noises;
-    private MediaPlayer mPlayer;
-    private Map<Integer, Boolean> loaded;
-    private Map<Integer, Integer> samplesId;
+
     private CategoryCtrl ctrl;
 
 
@@ -37,10 +42,6 @@ public class NoiseAdapter extends ArrayAdapter<Noise> {
         this.context = context;
         this.resource = resource;
         this.noises = objects;
-        this.mPlayer = null;
-        this.loaded = new HashMap<>();
-
-        this.samplesId = new HashMap<>();
         this.ctrl = new CategoryCtrl(categories);
     }
 
@@ -50,8 +51,7 @@ public class NoiseAdapter extends ArrayAdapter<Noise> {
         View view = layoutInflater.inflate(resource, parent, false);
         final Noise noise = getItem(position);
 
-        ImageButton button = (ImageButton) view.findViewById(R.id.image);
-        button.setBackgroundColor(0);
+        ItemLayout itemLayout = (ItemLayout) view.findViewById(R.id.layout_noise);
         TextView text = (TextView) view.findViewById(R.id.label);
         TextView catText = (TextView) view.findViewById(R.id.textViewCategory);
 
@@ -61,24 +61,10 @@ public class NoiseAdapter extends ArrayAdapter<Noise> {
         text.setText(noise.getLabel());
         catText.setText(cat.getName());
         int imageId = context.getResources().getIdentifier(noise.getImage(), "drawable", getContext().getPackageName());
-        Picasso.with(context).load(imageId).resize(128, 128).into(button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final int soundId = context.getResources().getIdentifier(noise.getSound(), "raw", getContext().getPackageName());
-                playSound(soundId);
-            }
-        });
+        Picasso.with(context).load(imageId).resize(160,160).centerCrop().into(itemLayout);
 
         return view;
     }
 
-    private void playSound(int resId) {
-        if(mPlayer != null) {
-            mPlayer.stop();
-            mPlayer.release();
-        }
-        mPlayer = MediaPlayer.create(this.context, resId);
-        mPlayer.start();
-    }
+
 }

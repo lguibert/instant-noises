@@ -1,38 +1,34 @@
 package fr.tpdo.instant_noises;
 
 
+import android.media.MediaPlayer;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.ContextMenu;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.ListView;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
-import org.apache.commons.io.IOUtils;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.lang.reflect.Type;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
+import fr.tpdo.instant_noises.adapter.DrawerArrayAdapter;
+import fr.tpdo.instant_noises.adapter.NoiseAdapter;
 import fr.tpdo.instant_noises.dao.CategoryDAO;
 import fr.tpdo.instant_noises.dao.NoiseDAO;
 
 
-public class MainActivity extends ActionBarActivity  {
+public class MainActivity extends ActionBarActivity implements AdapterView.OnItemClickListener {
 
     private DrawerLayout drawerLayout;
     private ListView drawerList;
+    private GridView gridView;
+    private NoiseAdapter noiseAdapter;
+
+    private MediaPlayer mPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,21 +44,34 @@ public class MainActivity extends ActionBarActivity  {
 
         DrawerArrayAdapter daa = new DrawerArrayAdapter(this, R.layout.drawer_list_item, categoryDAO.findAll(Category.class, R.raw.category));
         drawerList.setAdapter(daa);
-        NoiseAdapter na = new NoiseAdapter(this, R.layout.itemnoise, noiseDAO.findAll(Noise.class, R.raw.settings), categoryDAO.findAll(Category.class, R.raw.category));
-        GridView gv = (GridView) findViewById(R.id.gridView);
-        gv.setAdapter(na);
+
+        gridView = (GridView) findViewById(R.id.gridView);
+        gridView.setOnItemClickListener(this);
+
+
+        List<Noise> noises = noiseDAO.findAll(Noise.class, R.raw.settings);
+        List<Category> categories = categoryDAO.findAll(Category.class, R.raw.category);
+        refresh(noises,categories);
+
 
         drawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 NoiseDAO noiseDAO = new NoiseDAO(parent.getContext());
                 CategoryDAO categoryDAO = new CategoryDAO(parent.getContext());
-                NoiseAdapter na = new NoiseAdapter(parent.getContext(), R.layout.itemnoise, noiseDAO.findOneType(Noise.class, R.raw.settings, ((Category) drawerList.getAdapter().getItem(position)).getId()), categoryDAO.findAll(Category.class, R.raw.category));
-                GridView gv = (GridView) findViewById(R.id.gridView);
-                gv.setAdapter(na);
+                Category cat = (Category) drawerList.getAdapter().getItem(position);
+                List<Noise> noises = noiseDAO.findOneType(Noise.class, R.raw.settings, cat.getId());
+                List<Category> categories = categoryDAO.findAll(Category.class, R.raw.category);
+                refresh(noises,categories);
                 drawerLayout.closeDrawer(drawerList);
             }
         });
+    }
+
+
+    private void refresh(List<Noise> noises, List<Category> categories){
+        noiseAdapter = new NoiseAdapter(this, R.layout.itemnoise, noises, categories);
+        gridView.setAdapter(noiseAdapter);
     }
 
 
@@ -75,16 +84,25 @@ public class MainActivity extends ActionBarActivity  {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+        Noise noise = noiseAdapter.getItem(position);
+
+        final int soundId = getResources().getIdentifier(noise.getSound(), "raw", getPackageName());
+        playSound(soundId);
+    }
+
+    private void playSound(int resId) {
+        if(mPlayer != null) {
+            mPlayer.stop();
+            mPlayer.release();
+        }
+        mPlayer = MediaPlayer.create(this, resId);
+        mPlayer.start();
     }
 }
